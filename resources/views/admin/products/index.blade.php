@@ -15,13 +15,13 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Name</th>
-                                <th>Category</th>
+                                <th>Nama</th>
+                                <th>Kategori</th>
                                 <th>Tag</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Image</th>
-                                <th>Action</th>
+                                <th>Harga</th>
+                                <th>Stok</th>
+                                <th>Gambar</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,7 +37,7 @@
                                             <span class="badge badge-primary"> {{ $tag->name  }}</span>
                                         @endforeach
                                     </td>
-                                    <td>${{ number_format($product->price, 2) }}</td>
+                                    <td>Rp.{{ number_format($product->price, 2) }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                         @if(count($product->gallery)  > 0)

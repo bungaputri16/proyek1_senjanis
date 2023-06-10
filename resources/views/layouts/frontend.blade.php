@@ -252,6 +252,7 @@
                 <li>Email: hello@colorlib.com</li>
               </ul>
             </div>
+           
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
             <div class="footer__widget">
