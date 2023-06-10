@@ -3,8 +3,8 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Data Customer
-                    <a href="{{ route('customer.create') }}" class="btn btn-primary float-right">
+                <h3>Data Admin
+                    <a href="{{ route('admins.create') }}" class="btn btn-primary float-right">
                         Tambah
                     </a>
                 </h3>     
@@ -33,10 +33,10 @@
                                     <td>
                                         <div class="btn-group">
                                          
-                                            <a href="{{ route('customer.edit',$row->id ) }}" class="btn btn-info">
+                                            <a href="{{ route('admins.edit',$row->id ) }}" class="btn btn-info">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form onclick="return confirm('are you sure ?');" action="{{ route('customer.destroy', $row->id) }}" method="post">
+                                            <form onclick="return confirm('Apakah Anda Yakin ?');" action="{{ route('admins.destroy', $row->id) }}" method="post">
                                                 @csrf 
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -44,7 +44,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach
+                          @endforeach
                         </tbody>
                     </table>
                 </div>

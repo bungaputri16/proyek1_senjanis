@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminsController;
 use App\Http\Controllers\Admin\CustomerController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,7 @@ Route::get('/shop/{slug?}', [\App\Http\Controllers\ShopController::class, 'index
 Route::get('/shop/tag/{slug?}', [\App\Http\Controllers\ShopController::class, 'tag'])->name('shop.tag');
 Route::get('/product/{product:slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product.show');
 Route::resource("customer", CustomerController::class);
+Route::resource("admins", AdminsController::class);
 
 
 // react route

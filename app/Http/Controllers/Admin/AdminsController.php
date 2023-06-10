@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Admins;
 use Illuminate\Support\Facades\Storage;
 
-
-
-
-
-
-class CustomerController extends Controller
+class AdminsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +17,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $data = Customer::all();
-        return view('admin.customer.index', compact('data'));
+        $data = Admins::all();
+        return view('admin.admins.index', compact('data'));
     }
 
     /**
@@ -32,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.customer.create');
+        return view('admin.admins.create');
     }
 
     /**
@@ -50,7 +46,7 @@ class CustomerController extends Controller
             'alamat' => 'required',
         ]);
     
-        Customer::create([
+        Admins::create([
             'nama' =>$request->nama,
             'email' =>$request->email,
             'hp' =>$request->hp,
@@ -58,7 +54,7 @@ class CustomerController extends Controller
 
         ]);
 
-        return redirect()->route('customer.index');
+        return redirect()->route('admins.index');
     }
 
     /**
@@ -67,9 +63,9 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show($id)
     {
-        return view('admin.customer.show', compact('data'));
+        //
     }
 
     /**
@@ -80,8 +76,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $edit = Customer::findOrFail($id);
-        return view('admin.customer.edit', compact('edit'));
+        $edit = Admins::findOrFail($id);
+        return view('admin.admins.edit', compact('edit'));
     }
 
     /**
@@ -101,8 +97,8 @@ class CustomerController extends Controller
         ];
         $validatedData = $request->validate($rules);
 
-        Customer::where('id', $id)->update($validatedData);
-        return redirect()->route('customer.index');
+        Admins::where('id', $id)->update($validatedData);
+        return redirect()->route('admins.index');
     }
 
     /**
@@ -113,7 +109,7 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        Customer::where("id", $id)->delete();
+        Admins::where("id", $id)->delete();
         return back();
     }
 }

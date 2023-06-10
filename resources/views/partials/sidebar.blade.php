@@ -47,7 +47,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="{{ route('admins.index') }}">
                     <i class="far fa-file-alt"></i>
                     <span>Data Admin</span></a>
             </li>
