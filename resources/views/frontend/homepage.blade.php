@@ -6,10 +6,10 @@
       <div class="container">
           <div class="hero__item set-bg" data-setbg="{{ asset('frontend/img/hero/banner1.png') }}">
               <div class="hero__text">
-                  <span>FRUIT FRESH</span>
-                  <h2>Vegetable <br />100% Organic</h2>
-                  <p>Free Pickup and Delivery Available</p>
-                  <a href="#" class="primary-btn">SHOP NOW</a>
+                  <span>Beli Sekarang!</span>
+                  <h2>Sajian Manis Untuk <br />Kamu Yang Manis</h2>
+                  <p>Senjanis Menyediakan Aneka Makanan Manis Berupa <br />Brownies, Bolen Pisang dan Cookies. Jangan Sampai <br />Kehabisan Ya!</p>
+                  <a href="#" class="primary-btn">Beli Sekarang</a>
               </div>
           </div>
       </div>
