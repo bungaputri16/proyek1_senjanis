@@ -35,7 +35,7 @@
                                             <a href="" class="btn btn-warning">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="" class="btn btn-info">
+                                            <a href="{{ route('customer.edit',$row->id ) }}" class="btn btn-info">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                             <form onclick="return confirm('are you sure ?');" action="{{ route('customer.destroy', $row->id) }}" method="post">

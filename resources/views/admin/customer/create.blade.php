@@ -5,7 +5,7 @@
             <div class="card-header">
                 <h3>Tambah Customer 
                     <a href="{{ route('customer.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        Kembali 
                     </a>
                 </h3>     
             </div>
@@ -31,7 +31,7 @@
                  
                  
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

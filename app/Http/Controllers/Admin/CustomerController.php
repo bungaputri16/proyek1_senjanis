@@ -80,7 +80,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = Customer::findOrFail($id);
+        return view('customer.edit', compact('edit'));
     }
 
     /**
@@ -92,7 +93,16 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'nama' => 'required',
+            'email' => 'required',
+            'hp' => 'required',
+            'alamat' => 'required',
+        ];
+        $validatedData = $request->validate($rules);
+
+        Customer::where('id', $id)->update($validatedData);
+        return redirect()->route('customer.index');
     }
 
     /**
