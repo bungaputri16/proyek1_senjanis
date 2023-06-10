@@ -46,7 +46,7 @@
             <a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a>
           </li>
         </ul>
-        <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+        <div class="header__cart__price">item: <span>Rp.{{ $cartTotal }}</span></div>
       </div>
       <div class="humberger__menu__widget">
           @guest
@@ -79,17 +79,17 @@
       </div>
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="{{ route('shop.index') }}">Shop</a></li>
+          <li class="active"><a href="/">Halaman Utama</a></li>
+          <li><a href="{{ route('shop.index') }}">Produk</a></li>
           <li>
-            <a href="#">Categories</a>
+            <a href="#">Kategori</a>
             <ul class="header__menu__dropdown">
               @foreach($menu_categories as $menu_category)
                 <li><a href="{{ route('shop.index', $menu_category->slug) }}">{{ $menu_category->name }}</a></li>
               @endforeach
             </ul>
           </li>
-          <li><a href="#">Contact</a></li>
+         
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -101,8 +101,8 @@
       </div>
       <div class="humberger__menu__contact">
         <ul>
-          <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-          <li>Free Shipping for all Order of $99</li>
+          <li><i class="fa fa-envelope"></i> senjanis@gmail.com</li>
+      
         </ul>
       </div>
     </div>
@@ -180,7 +180,7 @@
                     @endforeach
                   </ul>
                 </li>
-                <li><a href="#">Kontak</a></li>
+               
               </ul>
             </nav>
           </div>
@@ -196,7 +196,7 @@
                   >
                 </li>
               </ul>
-              <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+              <div class="header__cart__price">item: <span>Rp.{{ $cartTotal }}</span></div>
             </div>
           </div>
         </div>
