@@ -116,8 +116,8 @@
             <div class="col-lg-6 col-md-6">
               <div class="header__top__left">
                 <ul>
-                  <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                  <li>Free Shipping for all Order of $99</li>
+                  <li><i class="fa fa-envelope"></i> senjanis@gmail.com</li>
+                 
                 </ul>
               </div>
             </div>
@@ -170,17 +170,17 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="{{ route('shop.index') }}">Shop</a></li>
+                <li class="active"><a href="/">Halaman Utama</a></li>
+                <li><a href="{{ route('shop.index') }}">Produk</a></li>
                 <li>
-                  <a href="#">Categories</a>
+                  <a href="#">Kategori</a>
                   <ul class="header__menu__dropdown">
                     @foreach($menu_categories as $menu_category)
                       <li><a href="{{ route('shop.index', $menu_category->slug) }}">{{ $menu_category->name }}</a></li>
                     @endforeach
                   </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Kontak</a></li>
               </ul>
             </nav>
           </div>
