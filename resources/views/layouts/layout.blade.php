@@ -13,7 +13,16 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
       rel="stylesheet"
     />
-    
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+
+
+<!-- Fonts -->
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css" />
@@ -37,7 +46,7 @@
       <div class="humberger__menu__logo">
         <a href="#"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
       </div>
-      <div class="humberger__menu__cart">
+      {{-- <div class="humberger__menu__cart">
         <ul>
           <li>
             <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
@@ -47,7 +56,7 @@
           </li>
         </ul>
         <div class="header__cart__price">item: <span>Rp.{{ $cartTotal }}</span></div>
-      </div>
+      </div> --}}
       <div class="humberger__menu__widget">
           @guest
             <div class="header__top__right__language">
@@ -191,12 +200,12 @@
                   <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
                 </li>
                 <li>
-                  <a href="{{ route('cart.index') }}"
-                    ><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a
-                  >
+                  <a href="{{ route('cart.index') }}">
+                    {{-- <i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span> --}}
+                    </a>
                 </li>
               </ul>
-              <div class="header__cart__price">item: <span>Rp.{{ $cartTotal }}</span></div>
+              {{-- <div class="header__cart__price">item: <span>Rp.{{ $cartTotal }}</span></div> --}}
             </div>
           </div>
         </div>
