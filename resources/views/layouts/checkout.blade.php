@@ -2,8 +2,8 @@
 <html lang="zxx">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Ogani Template" />
-    <meta name="keywords" content="Ogani, unica, creative, html" />
+    <meta name="description" content="Senjanis" />
+    <meta name="keywords" content="Senjanis" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Senjanis</title>
@@ -58,48 +58,36 @@
                 <a href="./index.html"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
               </div>
               <ul>
-                <li>Address: 60-49 Road 11378 New York</li>
-                <li>Phone: +65 11.188.888</li>
-                <li>Email: hello@colorlib.com</li>
+                <li><a href="#">Alamat: Sindang Kerta</a></li>
+                <li><a href="#">No Telp: 083845167289</a></li>
+                <li><a href="#">Email: senjanis@gmail.com</a></li>                
               </ul>
             </div>
+           
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
             <div class="footer__widget">
-              <h6>Useful Links</h6>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">About Our Shop</a></li>
-                <li><a href="#">Secure Shopping</a></li>
-                <li><a href="#">Delivery infomation</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Our Sitemap</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Innovation</a></li>
-                <li><a href="#">Testimonials</a></li>
-              </ul>
+              <h6>Tentang kami</h6>
+              <p>Sistem Pemesanan Online Senjanis adalah situs web <br />yang bisa digunakan untuk melakukan pemesanan <br />makanan berupa brownies, kue kering dan molen yang <br />
+              diproduksi oleh Senjanis. Situs web ini <br />dibuat agar memudahkan orang yang ingin memesan <br />makanan secara daring tidak melalui aplikasi<p>
+              
             </div>
           </div>
           <div class="col-lg-4 col-md-12">
             <div class="footer__widget">
-              <h6>Join Our Newsletter Now</h6>
+              <h6>Bergabunglah Dengan Kami Sekarang</h6>
               <p>
-                Get E-mail updates about our latest shop and special offers.
+              Dapatkan pembaruan email tentang toko terbaru dan penawaran khusus kami.
               </p>
               <form action="#">
-                <input type="text" placeholder="Enter your mail" />
-                <button type="submit" class="site-btn">Subscribe</button>
+                <input type="text" placeholder="Masukan email anda" />
+                <button type="submit" class="site-btn">Berlangganan</button>
               </form>
               <div class="footer__widget__social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="https://www.instagram.com/senjanis.imy/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/senjanis.imy/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.instagram.com/senjanis.imy/"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/senjanis.imy/"><i class="fa fa-pinterest"></i></a>
               </div>
             </div>
           </div>
@@ -109,15 +97,15 @@
             <div class="footer__copyright">
               <div class="footer__copyright__text">
                 <p>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  <!-- Senjanis -->
                   Copyright &copy;
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  All rights reserved | This template is made with
-                  <i class="fa fa-heart" aria-hidden="true"></i> by
-                  <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                   | 
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <a href="https://www.instagram.com/senjanis.imy/" target="_blank">Senjanis</a>
+                  <!-- Senjanis -->
                 </p>
               </div>
               <div class="footer__copyright__payment">

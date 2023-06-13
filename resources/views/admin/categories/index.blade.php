@@ -3,9 +3,9 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Category List
+                <h3>Data Kategori
                     <a href="{{ route('admin.categories.create') }}" class="btn btn-primary float-right">
-                        Create
+                        Buat
                     </a>
                 </h3>     
             </div>
@@ -15,12 +15,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Slug</th>
-                                <th>Product Count</th>
-                                <th>Image</th>
+                                <th>Harga Produk</th>
+                                <th>Gambar</th>
                                 <th>Parent</th>
-                                <th>Action</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +36,7 @@
                                                 <img src="{{ $category->photo->getUrl() }}" width="50px" height="50px">
                                             </a>
                                         @else
-                                            <span class="badge badge-warning">No Image</span>
+                                            <span class="badge badge-warning">Tidak ada gambar</span>
                                         @endif
                                     </td>
                                     <td>{{ $category->parent->name ?? 'Null' }}</td>

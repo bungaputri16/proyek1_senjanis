@@ -14,7 +14,7 @@
                     @csrf 
                     @method('put')
                     <div class="form-group">
-                    <label for="category_id">Category</label>
+                    <label for="category_id">Kategori</label>
                     <select class="form-control" name="category_id" id="">
                         @foreach($categories as $id => $categoryName)
                             <option {{ $id === $product->category->id ? 'selected' : null }} value="{{ $id }}">{{ $categoryName }}</option>
@@ -30,11 +30,11 @@
                         </select>   
                     </div>
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nama</label>
                         <input type="text" name="name" value="{{ old('name', $product->name) }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="price">price</label>
+                        <label for="price">Harga</label>
                         <input type="number" name="price" value="{{ old('price', $product->price) }}" class="form-control">
                     </div>
                     <div class="form-group">
@@ -42,11 +42,11 @@
                         <input type="number" name="quantity" value="{{ old('quantity', $product->quantity) }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="weight">weight</label>
+                        <label for="weight">Berat</label>
                         <input type="number" name="weight" value="{{ old('weight', $product->weight) }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="description">description</label>
+                        <label for="description">Deskripsi</label>
                         <textarea class="form-control" name="description" id="description" cols="30" rows="5">{{ $product->description }}</textarea>
                     </div>
                     <div class="form-group">
@@ -54,7 +54,7 @@
                         <textarea class="form-control" name="details" id="details" cols="30" rows="5">{{ $product->details }}</textarea>
                     </div>
                     <div class="form-group {{ $errors->has('gallery') ? 'has-error' : '' }}">
-                        <label for="gallery">gallery</label>
+                        <label for="gallery">Gambar</label>
                         <div class="needsclick dropzone" id="gallery-dropzone">
 
                         </div>
@@ -65,7 +65,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

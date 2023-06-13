@@ -3,9 +3,9 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Create Category
+                <h3>Buat Kategori
                     <a href="{{ route('admin.categories.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        Kembali
                     </a>
                 </h3>     
             </div>
@@ -13,11 +13,11 @@
                 <form action="{{ route('admin.categories.store') }}" method="post">
                     @csrf 
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nama</label>
                         <input type="text" name="name" class="form-control">
                     </div>
                     <div class="form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
-                        <label for="photo">Photo</label>
+                        <label for="photo">Gambar</label>
                         <div class="needsclick dropzone" id="photo-dropzone">
 
                         </div>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

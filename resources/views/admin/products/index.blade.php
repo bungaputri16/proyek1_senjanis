@@ -3,9 +3,9 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>product List
+                <h3>List Produk
                     <a href="{{ route('admin.products.create') }}" class="btn btn-primary float-right">
-                        Create
+                        Buat
                     </a>
                 </h3>     
             </div>
@@ -37,7 +37,7 @@
                                             <span class="badge badge-primary"> {{ $tag->name  }}</span>
                                         @endforeach
                                     </td>
-                                    <td>Rp.{{ number_format($product->price, 2) }}</td>
+                                    <td>Rp. {{ number_format($product->price, 2) }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                         @if(count($product->gallery)  > 0)
@@ -45,7 +45,7 @@
                                                 <img src="{{ $product->getMedia('gallery')->first()->getUrl() }}" width="45px" height="45px" alt="">  
                                             </a>
                                         @else
-                                            <span class="badge badge-warning">no image</span>
+                                            <span class="badge badge-warning">Tidak ada gambar</span>
                                         @endif
                                     </td>
                                     <td>

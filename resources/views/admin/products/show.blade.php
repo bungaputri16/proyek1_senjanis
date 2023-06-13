@@ -5,7 +5,7 @@
             <div class="card-header">
                 <h3>{{ $product->name }}
                     <a href="{{ route('admin.products.index') }}" class="btn btn-primary float-right">
-                        Go Back
+                        kembali
                     </a>
                 </h3>     
             </div>
@@ -14,7 +14,7 @@
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <th>Images</th>
+                                <th>Gambar</th>
                                 <td colspan="6"></td>
                             </tr>
                             <tr>
@@ -26,16 +26,16 @@
                                     </th>
                                 @empty
                                     <th>
-                                        <span class="badge badge-warning">no image</span>
+                                        <span class="badge badge-warning">tidak ada gambar</span>
                                     </th>
                                 @endforelse
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>Deskripsi</th>
                                 <td colspan="6">{{ $product->description }}</td>
                             </tr>
                             <tr>
-                                <th>Details</th>
+                                <th>Detail</th>
                                 <td colspan="6">{{ $product->details }}</td>
                             </tr>
                         </tbody>
