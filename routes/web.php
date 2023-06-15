@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminsController;
+
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\TransaksiController;
+use App\Http\Controllers\LaporanController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +26,12 @@ Route::get('/shop/{slug?}', [\App\Http\Controllers\ShopController::class, 'index
 Route::get('/shop/tag/{slug?}', [\App\Http\Controllers\ShopController::class, 'tag'])->name('shop.tag');
 Route::get('/product/{product:slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product.show');
 Route::resource("customer", CustomerController::class);
-Route::resource("admins", AdminsController::class);
+Route::get('/laporan', [LaporanController::class, 'generatePDF']);
+Route::resource('transaksi', TransaksiController::class);
+Route::get('/transaksi/search', [TransaksiController::class, 'search'])->name('transaksi.search');
+
+
+
 
 
 // react route

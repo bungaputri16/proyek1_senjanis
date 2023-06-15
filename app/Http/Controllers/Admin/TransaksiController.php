@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admins;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
-class AdminsController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,21 @@ class AdminsController extends Controller
      */
     public function index()
     {
-        $data = Admins::all();
-        return view('admin.admins.index', compact('data'));
+        $data = Transaksi::all();
+        return view('admin.transaksi.index', compact('data'));
+    }
+
+    public function generatePDF(){
+        $transaksis = Transaksi::all();
+
+        $data = [
+            'title' => 'Laporan Transaksi',
+            'transaksis' => $transaksis
+        ];
+
+        $pdf = PDF::loadView('laporan', $data);
+
+        return $pdf->download('laporan_transaksi.pdf');
     }
 
     /**
@@ -28,7 +41,7 @@ class AdminsController extends Controller
      */
     public function create()
     {
-        return view('admin.admins.create');
+        //
     }
 
     /**
@@ -39,22 +52,7 @@ class AdminsController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama' => 'required',
-            'email' => 'required',
-            'hp' => 'required',
-            'alamat' => 'required',
-        ]);
-    
-        Admins::create([
-            'nama' =>$request->nama,
-            'email' =>$request->email,
-            'hp' =>$request->hp,
-            'alamat' =>$request->alamat,
-
-        ]);
-
-        return redirect()->route('admins.index');
+        //
     }
 
     /**
@@ -76,8 +74,7 @@ class AdminsController extends Controller
      */
     public function edit($id)
     {
-        $edit = Admins::findOrFail($id);
-        return view('admin.admins.edit', compact('edit'));
+        //
     }
 
     /**
@@ -89,16 +86,7 @@ class AdminsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rules = [
-            'nama' => 'required',
-            'email' => 'required',
-            'hp' => 'required',
-            'alamat' => 'required',
-        ];
-        $validatedData = $request->validate($rules);
-
-        Admins::where('id', $id)->update($validatedData);
-        return redirect()->route('admins.index');
+        //
     }
 
     /**
@@ -109,7 +97,19 @@ class AdminsController extends Controller
      */
     public function destroy($id)
     {
-        Admins::where("id", $id)->delete();
-        return back();
+        //
     }
+
+ 
+    public function search(Request $request){
+        $keyword = $request->input('keyword');
+
+        // Melakukan pencarian berdasarkan nomor transaksi atau nama
+        $transaksis = Transaksi::where('nomor_transaksi', 'LIKE', "%$keyword%")
+                               ->orWhere('nama', 'LIKE', "%$keyword%")
+                               ->get();
+    
+        return view('admin.transaksi.index', compact('transaksis'));
+    }
+
 }

@@ -46,24 +46,21 @@
                     <span>Data Customer</span></a>
             </li>
 
+            
+{{-- 
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('admins.index') }}">
-                    <i class="far fa-file-alt"></i>
-                    <span>Data Admin</span></a>
-            </li>
-
+                <a class="nav-link" href="{{ route('laporan.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Laporan Penjualan</span></a>
+            </li> --}}
+              
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('transaksi.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Laporan Penjualan</span></a>
             </li>
-              
             
-            <li class="nav-item active">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Transaksi </span></a>
-            </li>
+          
 
 
 
