@@ -32,7 +32,7 @@ const ProductList = () => {
             {loading ? (
                 <h2>Loading...</h2>
             ) : products.length === 0 ? (
-                <h3>Not Found !</h3>
+                <h3>Tidak ada !</h3>
             ) : (
                 products.map((product, index) => {
                     return (
@@ -71,7 +71,7 @@ const ProductList = () => {
                                             {product.name}
                                         </a>
                                     </h6>
-                                    <h5>${product.price}</h5>
+                                    <h5>Rp. {product.price}</h5>
                                 </div>
                             </div>
                         </div>

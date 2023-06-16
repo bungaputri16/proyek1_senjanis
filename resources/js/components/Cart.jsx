@@ -46,9 +46,9 @@ const Cart = () => {
                 {carts.length === 0 ? (
                     <tr>
                         <td colSpan="5">
-                            Cart is Empty{" "}
+                            Keranjang Kosong{" "}
                             <a href="/shop" className="btn btn-dark">
-                                Go Shopping
+                                Pergi Berbelanja
                             </a>
                         </td>
                     </tr>
@@ -69,7 +69,7 @@ const Cart = () => {
                                     <h5>{cart.name}</h5>
                                 </td>
                                 <td className="shoping__cart__price">
-                                    ${cart.price}
+                                    Rp. {cart.price}
                                 </td>
                                 <td className="shoping__cart__quantity">
                                     <div className="quantity">
@@ -105,7 +105,7 @@ const Cart = () => {
                                     </div>
                                 </td>
                                 <td className="shoping__cart__total">
-                                    ${cart.price * cart.quantity}
+                                    Rp. {cart.price * cart.quantity}
                                 </td>
                                 <td className="shoping__cart__item__close">
                                     <span
@@ -130,9 +130,9 @@ const Cart = () => {
                             <thead>
                                 <tr>
                                     <th className="shoping__product">
-                                        Products
+                                        Produk
                                     </th>
-                                    <th>Price</th>
+                                    <th>Harga</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
                                     <th></th>
@@ -147,28 +147,28 @@ const Cart = () => {
                 <div className="col-lg-12">
                     <div className="shoping__cart__btns">
                         <a href="#" className="primary-btn cart-btn">
-                            CONTINUE SHOPPING
+                            Lanjut Berbelanja
                         </a>
                         <a
                             href="#"
                             className="primary-btn cart-btn cart-btn-right"
                         >
                             <span className="icon_loading"></span>
-                            Upadate Cart
+                            Upadate Keranjang
                         </a>
                     </div>
                 </div>
                 <div className="col-lg-6">
                     <div className="shoping__continue">
                         <div className="shoping__discount">
-                            <h5>Discount Codes</h5>
+                            <h5>Kode Diskon</h5>
                             <form action="#">
                                 <input
                                     type="text"
-                                    placeholder="Enter your coupon code"
+                                    placeholder="Masukkan Kode Kupon"
                                 />
                                 <button type="submit" className="site-btn">
-                                    APPLY COUPON
+                                    Gunakan Kupon
                                 </button>
                             </form>
                         </div>
@@ -176,17 +176,17 @@ const Cart = () => {
                 </div>
                 <div className="col-lg-6">
                     <div className="shoping__checkout">
-                        <h5>Cart Total</h5>
+                        <h5>Keranjang Total</h5>
                         <ul>
                             <li>
-                                Subtotal <span>${total}</span>
+                                Subtotal <span>Rp. {total}</span>
                             </li>
                             <li>
-                                Total <span>${total}</span>
+                                Total <span>Rp. {total}</span>
                             </li>
                         </ul>
                         <a href="/order/checkout" className="primary-btn">
-                            PROCEED TO CHECKOUT
+                            CHECKOUT
                         </a>
                     </div>
                 </div>

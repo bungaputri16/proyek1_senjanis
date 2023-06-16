@@ -145,7 +145,7 @@ const Checkout = () => {
     return (
         <>
             <div className="checkout__htmlForm">
-                <h4 className="mb-5">Billing Details</h4>
+                <h4 className="mb-5">Detail Pembayaran</h4>
                 <form onSubmit={placeOrder}>
                     <div className="row">
                         <div className="col-lg-8 col-md-6">
@@ -153,7 +153,7 @@ const Checkout = () => {
                                 <div className="col-lg-12">
                                     <div className="checkout__input">
                                         <p>
-                                            Full Name<span>*</span>
+                                            Nama Lengkap<span>*</span>
                                         </p>
                                         <input
                                             type="text"
@@ -167,7 +167,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Province<span>*</span>
+                                    Provinsi<span>*</span>
                                 </p>
                                 <select
                                     className="form-control"
@@ -191,7 +191,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    City<span>*</span>
+                                    Kabupaten/Kota<span>*</span>
                                 </p>
                                 <select
                                     id="city"
@@ -216,7 +216,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Shipping Service<span>*</span>
+                                    Jasa Pengiriman<span>*</span>
                                 </p>
                                 <select
                                     className="form-control"
@@ -241,7 +241,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Address<span>*</span>
+                                    Alamat<span>*</span>
                                 </p>
                                 <input
                                     placeholder="Street Address"
@@ -261,7 +261,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Postcode / ZIP<span>*</span>
+                                    Kode Pos<span>*</span>
                                 </p>
                                 <input
                                     type="text"
@@ -275,7 +275,7 @@ const Checkout = () => {
                                 <div className="col-lg-6">
                                     <div className="checkout__input">
                                         <p>
-                                            Phone<span>*</span>
+                                            Nomor Handphone<span>*</span>
                                         </p>
                                         <input
                                             type="text"
@@ -303,7 +303,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Order notes<span>*</span>
+                                    Catatan Pesanan<span>*</span>
                                 </p>
                                 <input
                                     type="text"
@@ -315,9 +315,9 @@ const Checkout = () => {
                         </div>
                         <div className="col-lg-4 col-md-6">
                             <div className="checkout__order">
-                                <h4>Your Order</h4>
+                                <h4>Pesanan Kamu</h4>
                                 <div className="checkout__order__products">
-                                    Products <span>Total</span>
+                                    Produk <span>Total</span>
                                 </div>
                                 <ul>
                                     {loading ? (
@@ -329,7 +329,7 @@ const Checkout = () => {
                                                     {cart.name} ({cart.quantity}{" "}
                                                     x {cart.price})
                                                     <span>
-                                                        $
+                                                        Rp.
                                                         {cart.price *
                                                             cart.quantity}
                                                     </span>

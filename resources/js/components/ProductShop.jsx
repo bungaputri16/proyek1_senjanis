@@ -69,7 +69,7 @@ const ProductShop = () => {
                                     columnGap: ".5rem",
                                 }}
                             >
-                                <label>Sort By :</label>
+                                <label>Urutkan Berdasarkan :</label>
                                 <select
                                     name="sortingBy"
                                     style={{ width: "150px" }}
@@ -77,16 +77,16 @@ const ProductShop = () => {
                                     onChange={(e) => sorting(e.target.value)}
                                 >
                                     <option value="default">
-                                        Default sorting
+                                        Urutan Default
                                     </option>
                                     <option value="popularity">
-                                        Popularity
+                                        Terpopuler
                                     </option>
                                     <option value="low-high">
-                                        Price: Low to High
+                                        Harga: Rendah - Tinggi
                                     </option>
                                     <option value="high-low">
-                                        Price: High to Low
+                                        Harga: Tinggi - Rendah
                                     </option>
                                 </select>
                             </div>
@@ -111,9 +111,9 @@ const ProductShop = () => {
                 {loading ? (
                     <h3>Loading...</h3>
                 ) : error === "Not Found" ? (
-                    <h3>Not Found !</h3>
+                    <h3>Tidak Ditemukan !</h3>
                 ) : products.length === 0 ? (
-                    <h3>Not Found !</h3>
+                    <h3>Tidak Ditemukan !</h3>
                 ) : (
                     products.map((product) => {
                         return (
@@ -154,7 +154,7 @@ const ProductShop = () => {
                                                 {product.name}
                                             </a>
                                         </h6>
-                                        <h5>${product.price}</h5>
+                                        <h5>Rp. {product.price}</h5>
                                     </div>
                                 </div>
                             </div>

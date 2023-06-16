@@ -93,10 +93,10 @@ const ProductDetail = () => {
                                     <i className="fa fa-star"></i>
                                     <i className="fa fa-star"></i>
                                     <i className="fa fa-star-half-o"></i>
-                                    <span>(18 reviews)</span>
+                                    <span>(18 Penilaian)</span>
                                 </div>
                                 <div className="product__details__price">
-                                    ${product.price}
+                                    Rp. {product.price}
                                 </div>
                                 <p>{product.description}</p>
                                 <form
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                                         className="primary-btn"
                                         style={{ border: "none" }}
                                     >
-                                        ADD TO CARD
+                                        Tambahkan ke Keranjang
                                     </button>
                                 </form>
                                 <a href="#" className="heart-icon">
@@ -146,11 +146,11 @@ const ProductDetail = () => {
                                 </a>
                                 <ul>
                                     <li>
-                                        <b>Weight</b>{" "}
+                                        <b>Berat</b>{" "}
                                         <span>{product.weight} gram</span>
                                     </li>
                                     <li>
-                                        <b>Share on</b>
+                                        <b>Bagikan Ke</b>
                                         <div className="share">
                                             <a href="#">
                                                 <i className="fa fa-facebook"></i>
@@ -202,7 +202,7 @@ const ProductDetail = () => {
                                         role="tabpanel"
                                     >
                                         <div className="product__details__tab__desc">
-                                            <h6>Products Infomation</h6>
+                                            <h6>Informasi Produk</h6>
                                             {product.details}
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@ const ProductDetail = () => {
                                         role="tabpanel"
                                     >
                                         <div className="product__details__tab__desc">
-                                            <h6>Products Infomation</h6>
+                                            <h6>Informasi Produk</h6>
                                             <p>
                                                 Vestibulum ac diam sit amet quam
                                                 vehicula elementum sed sit amet

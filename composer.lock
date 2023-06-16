@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c79423c9ab40ecac39336cfc34526ca",
+    "content-hash": "1d6828233c9eff4d2dc62751828af8df",
     "packages": [
         {
             "name": "brick/math",
@@ -345,6 +345,74 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.2"
             },
             "time": "2022-10-27T11:44:00+00:00"
+        },
+        {
+            "name": "dipantry/rajaongkir",
+            "version": "v2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dipantry/rajaongkir.git",
+                "reference": "2501a4c5604225af5aca4511cca056ac964d8b43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dipantry/rajaongkir/zipball/2501a4c5604225af5aca4511cca056ac964d8b43",
+                "reference": "2501a4c5604225af5aca4511cca056ac964d8b43",
+                "shasum": ""
+            },
+            "require": {
+                "flynsarmy/csv-seeder": "^2.0",
+                "illuminate/support": "^9.0.0|^10.0.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "ext-openssl": "*",
+                "orchestra/testbench": "^7.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^9.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dipantry\\Rajaongkir\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Auriga Aristo",
+                    "email": "aurigaaristo@gmail.com",
+                    "homepage": "https://aurigaaristo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "RajaOngkir API wrapper for PHP 8.0+",
+            "keywords": [
+                "api",
+                "cek-ongkir",
+                "laravel",
+                "php",
+                "rajaongkir",
+                "wrapper"
+            ],
+            "support": {
+                "issues": "https://github.com/Dipantry/rajaongkir/issues",
+                "source": "https://github.com/Dipantry/rajaongkir/tree/v2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://saweria.co/rigsto",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Rigsto",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-03-07T09:14:50+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -689,6 +757,66 @@
                 }
             ],
             "time": "2023-06-01T07:04:22+00:00"
+        },
+        {
+            "name": "flynsarmy/csv-seeder",
+            "version": "v2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
+                "reference": "b98d4ae2e9521bb5e9784b61febf59b4501a5a56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/b98d4ae2e9521bb5e9784b61febf59b4501a5a56",
+                "reference": "b98d4ae2e9521bb5e9784b61febf59b4501a5a56",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^0.6.0@dev",
+                "orchestra/testbench": "6.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Flynsarmy\\CsvSeeder\\CsvSeederServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flynsarmy\\CsvSeeder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flyn San",
+                    "email": "flynsarmy@gmail.com"
+                }
+            ],
+            "description": "Allows seeding of the database with CSV files",
+            "keywords": [
+                "csv",
+                "laravel",
+                "seed",
+                "seeding",
+                "seeds"
+            ],
+            "support": {
+                "issues": "https://github.com/Flynsarmy/laravel-csv-seeder/issues",
+                "source": "https://github.com/Flynsarmy/laravel-csv-seeder/tree/v2.0.6"
+            },
+            "time": "2021-02-09T23:48:06+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -6543,16 +6671,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.22.0",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "f85772abd508bd04e20bb4b1bbe260a68d0066d2"
+                "reference": "e3daa170d00fde61ea7719ef47bb09bb8f1d9b01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/f85772abd508bd04e20bb4b1bbe260a68d0066d2",
-                "reference": "f85772abd508bd04e20bb4b1bbe260a68d0066d2",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/e3daa170d00fde61ea7719ef47bb09bb8f1d9b01",
+                "reference": "e3daa170d00fde61ea7719ef47bb09bb8f1d9b01",
                 "shasum": ""
             },
             "require": {
@@ -6605,9 +6733,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.22.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.23.0"
             },
-            "time": "2023-05-14T12:31:37+00:00"
+            "time": "2023-06-12T08:44:38+00:00"
         },
         {
             "name": "filp/whoops",
@@ -8519,16 +8647,16 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "ec4dd16476b802dbdc6b4467f84032837e316b8c"
+                "reference": "47794d19e3215ace9e005a8f200cd7cc7be52572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/ec4dd16476b802dbdc6b4467f84032837e316b8c",
-                "reference": "ec4dd16476b802dbdc6b4467f84032837e316b8c",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/47794d19e3215ace9e005a8f200cd7cc7be52572",
+                "reference": "47794d19e3215ace9e005a8f200cd7cc7be52572",
                 "shasum": ""
             },
             "require": {
@@ -8565,7 +8693,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.4.0"
+                "source": "https://github.com/spatie/backtrace/tree/1.4.1"
             },
             "funding": [
                 {
@@ -8577,7 +8705,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-03-04T08:57:24+00:00"
+            "time": "2023-06-13T14:35:04+00:00"
         },
         {
             "name": "spatie/flare-client-php",
