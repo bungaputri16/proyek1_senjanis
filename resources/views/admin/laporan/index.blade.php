@@ -3,8 +3,8 @@
 @section('content')
         <div class="card">
             <div class="card-header">
-                <h3>Data Admin
-                    <a href="{{ route('admins.create') }}" class="btn btn-primary float-right">
+                <h3>Laporan Transaksi
+                    <a href="" class="btn btn-primary float-right">
                         Tambah
                     </a>
                 </h3>     
@@ -15,28 +15,28 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Tanggal</th>
                                 <th>Nama</th>
-                                <th>Email</th>
-                                <th>Nomor HP</th>
-                                <th>Alamat</th>
+                                <th>Nomor Transaksi</th>
+                                <th>Total</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $row)
+                            @foreach($transaksis as $transaksi)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->nama }}</td>
-                                    <td>{{ $row->email }}</td>
-                                    <td>{{ $row ->hp }}</td>
-                                    <td>{{ $row ->alamat }}</td>
+                                    <td>{{ $transaksi->tanggal }}</td>
+                                    <td>{{ $transaksi->nama }}</td>
+                                    <td>{{ $transaksi->nomor_transaksi }}</td>
+                                    <td>{{ $transaksi->jumlah }}</td>
                                     <td>
                                         <div class="btn-group">
                                          
-                                            <a href="{{ route('admins.edit',$row->id ) }}" class="btn btn-info">
+                                            <a href="" class="btn btn-info">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form onclick="return confirm('Apakah Anda Yakin ?');" action="{{ route('admins.destroy', $row->id) }}" method="post">
+                                            <form onclick="return confirm('are you sure ?');" action="" method="post">
                                                 @csrf 
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -44,7 +44,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                          @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
