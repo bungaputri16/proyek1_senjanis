@@ -5,7 +5,7 @@
 Clone the project
 
 ```bash
-  git clone https://
+  git clone https://https://github.com/bungaputri16/proyek1_senjanis.git
 ```
 
 Go to the project directory
