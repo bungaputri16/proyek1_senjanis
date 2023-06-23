@@ -1,15 +1,11 @@
-# Laravel 9 & React js - Ecommerce application
 
-## Screenshots
-
-![preview img](/preview.png)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/abdulaziz-m5u/ecommerce-youtube.git project-name
+  git clone https://
 ```
 
 Go to the project directory
