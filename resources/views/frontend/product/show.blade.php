@@ -7,11 +7,11 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="breadcrumb__text">
-              <h2>Vegetable’s Package</h2>
+              <h2>Detail Produk</h2>
               <div class="breadcrumb__option">
                 <a href="./index.html">Halaman Utama</a>
-                <a href="./index.html">Vegetables</a>
-                <span>Vegetable’s Package</span>
+                <a href="./index.html">Produk</a>
+                <span>Detail Produk</span>
               </div>
             </div>
           </div>

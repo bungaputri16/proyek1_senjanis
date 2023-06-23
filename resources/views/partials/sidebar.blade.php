@@ -12,18 +12,18 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-tag"></i>
@@ -35,9 +35,24 @@
                         <a class="collapse-item" href="{{ route('admin.tags.index') }}">Tag</a>
                         <a class="collapse-item" href="{{ route('admin.products.index') }}">Produk</a>
                     </div>
-                </div>
+                </div> --}}
 
                 
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.categories.index') }}">
+                    <i class="fas fa-th-large"></i>
+                    <span>Kategori</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.tags.index') }}">
+                    <i class="fas fa-th-large"></i>
+                    <span>Tags Produk</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.products.index') }}">
+                    <i class="fas fa-th-large"></i>
+                    <span>Produk</span></a>
             </li>
 
             <li class="nav-item active">
@@ -45,6 +60,12 @@
                     <i class="fas fa-th-large"></i>
                     <span>Data Customer</span></a>
             </li>
+
+            {{-- <li class="nav-item active">
+                <a class="nav-link" href="{{ route('pesanan.index') }}">
+                    <i class="fas fa-th-large"></i>
+                    <span>Data Pesanan</span></a>
+            </li> --}}
 
             
 {{-- 
@@ -54,11 +75,11 @@
                     <span>Laporan Penjualan</span></a>
             </li> --}}
               
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{ route('transaksi.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Laporan Penjualan</span></a>
-            </li>
+            </li> --}}
             
           
 

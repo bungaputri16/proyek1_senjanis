@@ -34,7 +34,7 @@ const ProductShop = () => {
 
         axios.post("/carts", { productId }).then((res) => {
             if (res.status === 200) {
-                swal("Success", "Added to Cart !", "success");
+                swal("Sukses", "Ditambahkan Ke Keranjang !", "Sukses");
                 window.location.reload();
             }
         });
@@ -95,7 +95,7 @@ const ProductShop = () => {
                     <div className="col-lg-4 col-md-4">
                         <div className="filter__found">
                             <h6>
-                                <span>{products.length}</span> Products found
+                                <span>{products.length}</span> Produk Ditemukan
                             </h6>
                         </div>
                     </div>
@@ -129,11 +129,11 @@ const ProductShop = () => {
                                         }}
                                     >
                                         <ul className="product__item__pic__hover">
-                                            <li>
+                                            {/* <li>
                                                 <a href="#">
                                                     <i className="fa fa-heart"></i>
                                                 </a>
-                                            </li>
+                                            </li> */}
                                             <li>
                                                 <a
                                                     href="#"

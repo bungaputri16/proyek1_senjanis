@@ -9,7 +9,7 @@
                   <span>Beli Sekarang!</span>
                   <h2>Sajian Manis Untuk <br />Kamu Yang Manis</h2>
                   <p>Senjanis Menyediakan Aneka Makanan Manis Berupa <br />Brownies, Bolen Pisang dan Cookies. Jangan Sampai <br />Kehabisan Ya!</p>
-                  <a href="#" class="primary-btn">Beli Sekarang</a>
+                  <a href="{{ route('shop.index') }}" class="primary-btn">Beli Sekarang</a>
               </div>
           </div>
       </div>

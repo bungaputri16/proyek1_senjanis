@@ -27,9 +27,9 @@
 
   <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    {{-- <div id="preloder">
       <div class="loader"></div>
-    </div>
+    </div> --}}
 
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
@@ -39,9 +39,9 @@
       </div>
       <div class="humberger__menu__cart">
         <ul>
-          <li>
+          {{-- <li>
             <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
-          </li>
+          </li> --}}
           <li>
             <a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a>
           </li>
@@ -79,7 +79,8 @@
       </div>
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
-          <li class="active"><a href="/">Halaman Utama</a></li>
+          {{-- <li class="active"><a href="/">Halaman Utama</a></li> --}}
+          <li class=""><a href="/">Halaman Utama</a></li> 
           <li><a href="{{ route('shop.index') }}">Produk</a></li>
           <li>
             <a href="#">Kategori</a>
@@ -187,9 +188,9 @@
           <div class="col-lg-3">
             <div class="header__cart">
               <ul>
-                <li>
+                {{-- <li>
                   <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
-                </li>
+                </li> --}}
                 <li>
                   <a href="{{ route('cart.index') }}"
                     ><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a

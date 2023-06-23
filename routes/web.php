@@ -4,6 +4,9 @@
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\TransaksiController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\MidtransController;
+use App\Http\Controllers\PesananController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/midtrans/payment', 'MidtransController@payment')->name('midtrans.payment');
+Route::post('/midtrans/notification', 'MidtransController@notification')->name('midtrans.notification');
 
 
 
@@ -29,6 +34,14 @@ Route::resource("customer", CustomerController::class);
 Route::get('/laporan', [LaporanController::class, 'generatePDF']);
 Route::resource('transaksi', TransaksiController::class);
 Route::get('/transaksi/search', [TransaksiController::class, 'search'])->name('transaksi.search');
+
+        // pesanan
+        Route::get('orders/pesanan', [\App\Http\Controllers\PesananradminController::class, 'index'])->name('admin.orders.index');
+        Route::get('orders/{id}', [\App\Http\Controllers\PesananadminController::class, 'show'])->name('admin.orders.show');
+        // Route::patch('pesanan/{id}', [PesananController::class, 'updateStatus'])->name('pesanan.update-status');
+        // Route::delete('pesanan/{id}', [PesananController::class, 'destroy'])->name('pesanan.destroy');
+
+Route::get('pesanan/berhasil', [\App\Http\Controllers\PesananController::class, 'index'])->name('pesanan.berhasil');
 
 
 
@@ -53,6 +66,8 @@ Route::get('api/users', [\App\Http\Controllers\UserController::class, 'index']);
 
 Route::group(['middleware' => 'auth'], function() {
     
+    // routes/web.php
+
     Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'process'])->name('checkout.process');
     Route::resource('/cart', \App\Http\Controllers\CartController::class)->except(['store', 'show']);
 
@@ -69,6 +84,9 @@ Route::group(['middleware' => 'auth'], function() {
         // products
         Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
         Route::post('products/images', [\App\Http\Controllers\Admin\ProductController::class,'storeImage'])->name('products.storeImage');
+
+
+
     });
 });
 

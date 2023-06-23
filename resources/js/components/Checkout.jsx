@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import midtransClient from 'midtrans-client';
+
+const snap = new midtransClient.Snap({
+  isProduction: false,
+  serverKey: 'SB-Mid-server-PcmuEJh0wr8UJm7v7O6cdw68',
+  clientKey: 'SB-Mid-client-nDF1W4fVnwVOemix',
+});
 
 const Checkout = () => {
     const [carts, setCarts] = useState([]);
     const [total, setTotal] = useState(0);
-    const [provinces, setProvinces] = useState([]);
-    const [cities, setCities] = useState([]);
+    const [shippingCost, setShippingCost] = useState(0);
+
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [wait, setWait] = useState(false);
     const [fullName, setFullName] = useState("");
     const [province, setProvince] = useState("");
-    const [city, setCity] = useState("");
     const [shippingService, setShippingService] = useState("");
     const [address, setAddress] = useState("");
     const [address2, setAddress2] = useState("");
@@ -30,30 +37,15 @@ const Checkout = () => {
             setLoading(false);
         });
 
-        axios.get("/api/provinces").then((res) => {
-            if (res.status === 200) {
-                setProvinces(Object.values(res.data.provinces));
-            }
-            setLoading(false);
-        });
         axios.get("/api/users").then((res) => {
             if (res.status === 200) {
                 if (res.data.users.province_id != null) {
-                    setProvinceId(res.data.users.province_id);
-                    setCityId(res.data.users.city_id);
+                    setProvince(res.data.users.province_id); // Mengubah setProvinceId menjadi setProvince
                 }
                 setFullName(
                     res.data.users.username == null
                         ? ""
                         : res.data.users.username
-                );
-                setProvince(
-                    res.data.users.province_id == null
-                        ? ""
-                        : res.data.users.province_id
-                );
-                setCity(
-                    res.data.users.city_id == null ? "" : res.data.users.city_id
                 );
                 setAddress(
                     res.data.users.address == null ? "" : res.data.users.address
@@ -82,41 +74,43 @@ const Checkout = () => {
         });
     }, []);
 
-    const setProvinceId = (provinceId) => {
-        setProvince(provinceId);
-        axios.get(`/api/cities?provinceId=${provinceId}`).then((res) => {
-            if (res.status === 200) {
-                setCities(res.data.cities);
-            }
-            setLoading(false);
-        });
-    };
+    const handleClick = () => {
+        window.location.href = '/pesanan/berhasil';
+      };
 
-    const setCityId = (city) => {
-        setCity(city);
-        setWait(true);
-        axios.get(`/api/shipping-cost?city=${city}`).then((res) => {
-            setServices(res.data.results);
-            setLoading(false);
-            setWait(false);
+    const handlePayment = async () => {
+        const transactionToken = await fetchPaymentToken();
+      
+        window.snap.pay(transactionToken, {
+          onSuccess: function(result) {
+            // Aksi yang diambil ketika pembayaran berhasil
+          },
+          onPending: function(result) {
+            // Aksi yang diambil ketika pembayaran masih dalam status tertunda
+          },
+          onError: function(result) {
+            // Aksi yang diambil ketika terjadi kesalahan dalam pembayaran
+          },
+          onClose: function(){
+            /* Anda dapat menambahkan implementasi Anda sendiri di sini */
+            alert('Anda menutup popup tanpa menyelesaikan pembayaran');
+          }
         });
     };
 
     const setShippingCostId = (service) => {
         setShippingService(service);
-        setWait(true);
-        const cityId = document.getElementById("city").value;
+        setWait(false);
 
-        axios
-            .post(`/api/set-shipping`, {
-                shipping_service: service,
-                city_id: cityId,
-            })
-            .then((res) => {
-                setTotal(res.data.data.total);
-                setLoading(false);
-                setWait(false);
-            });
+        let cost = 0;
+
+        if (service === "cod") {
+            cost = 0;
+        } else if (service === "lokasi1") {
+            cost = 10000;
+        }
+
+        setShippingCost(cost);
     };
 
     const placeOrder = (e) => {
@@ -126,7 +120,6 @@ const Checkout = () => {
             .post(`/api/checkout`, {
                 fullName,
                 province,
-                city,
                 shippingService,
                 address,
                 address2,
@@ -134,10 +127,11 @@ const Checkout = () => {
                 phone,
                 email,
                 notes,
+                shippingCost,
             })
             .then((res) => {
                 setTotal(0);
-                window.location.href = res.data;
+                handlePayment();
                 return null;
             });
     };
@@ -167,76 +161,16 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    Provinsi<span>*</span>
-                                </p>
-                                <select
-                                    className="form-control"
-                                    value={province}
-                                    onChange={(e) =>
-                                        setProvinceId(e.target.value)
-                                    }
-                                >
-                                    <option value="">=== Choose ===</option>
-                                    {provinces.map((province, index) => {
-                                        return (
-                                            <option
-                                                key={index}
-                                                value={index + 1}
-                                            >
-                                                {province}
-                                            </option>
-                                        );
-                                    })}
-                                </select>
-                            </div>
-                            <div className="checkout__input">
-                                <p>
-                                    Kabupaten/Kota<span>*</span>
-                                </p>
-                                <select
-                                    id="city"
-                                    className="form-control"
-                                    value={city}
-                                    onChange={(e) => setCityId(e.target.value)}
-                                >
-                                    <option value="">=== Choose ===</option>
-                                    {Object.entries(cities).map(
-                                        (city, index) => {
-                                            return (
-                                                <option
-                                                    key={index}
-                                                    value={city[0]}
-                                                >
-                                                    {city[1]}
-                                                </option>
-                                            );
-                                        }
-                                    )}
-                                </select>
-                            </div>
-                            <div className="checkout__input">
-                                <p>
-                                    Jasa Pengiriman<span>*</span>
+                                    Pengiriman<span>*</span>
                                 </p>
                                 <select
                                     className="form-control"
                                     value={shippingService}
-                                    onChange={(e) =>
-                                        setShippingCostId(e.target.value)
-                                    }
+                                    onChange={(e) => setShippingCostId(e.target.value)}
+                                    required
                                 >
-                                    <option value="">=== Choose ===</option>
-                                    {services.map((service, index) => {
-                                        return (
-                                            <option
-                                                key={index}
-                                                value={service.service.replace(
-                                                    /\s/g,
-                                                    ""
-                                                )}
-                                            >{`${service.service} | ${service.cost} | ${service.etd} `}</option>
-                                        );
-                                    })}
+                                    <option value="cod">Bayar/Ambil Ditoko (tanpa Ongkir)</option>
+                                    <option value="lokasi1">Diantar Dalam Kota (+10k)</option>
                                 </select>
                             </div>
                             <div className="checkout__input">
@@ -256,7 +190,7 @@ const Checkout = () => {
                                     onChange={(e) =>
                                         setAddress2(e.target.value)
                                     }
-                                    placeholder="Apartment, suite, unite ect (optinal)"
+                                    placeholder="nomor rumah, nama jalan atau detail alamat lainnya"
                                 />
                             </div>
                             <div className="checkout__input">
@@ -309,7 +243,7 @@ const Checkout = () => {
                                     type="text"
                                     value={notes}
                                     onChange={(e) => setNotes(e.target.value)}
-                                    placeholder="Notes about your order, e.g. special notes htmlFor delivery."
+                                    placeholder="Catatan tentang pesanan kamu"
                                 />
                             </div>
                         </div>
@@ -321,7 +255,7 @@ const Checkout = () => {
                                 </div>
                                 <ul>
                                     {loading ? (
-                                        <h3>Loading...</h3>
+                                        <h3>Tunggu...</h3>
                                     ) : (
                                         carts.map((cart, index) => {
                                             return (
@@ -338,21 +272,20 @@ const Checkout = () => {
                                         })
                                     )}
                                 </ul>
+                                <br />
+                                <br />
                                 <div className="checkout__order__total">
-                                    Total <span>${total}</span>
+                                    Total <span>Rp. {total}</span>
                                 </div>
-                                {wait ? (
-                                    <button
-                                        type="submit"
-                                        className="site-btn disabled"
-                                    >
-                                        Loading....
+                                <div className="checkout__order__total">
+                                    Biaya Pengiriman <span>Rp. {shippingCost}</span>
+                                </div>
+                                <div className="checkout__order__total">
+                                    Total Pesanan <span>Rp. {total + shippingCost}</span>
+                                </div>
+                                    <button type="submit" className="site-btn" onClick={handleClick}>
+                                        PESAN SEKARANG
                                     </button>
-                                ) : (
-                                    <button type="submit" className="site-btn">
-                                        PLACE ORDER
-                                    </button>
-                                )}
                             </div>
                         </div>
                     </div>
